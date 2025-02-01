@@ -19,7 +19,7 @@ Fitplanner es una solución para quienes desean optimizar su vida saludable medi
 Proyecto_Fitplanner/
 ├── App/
 │   ├── app.py                  # Archivo principal de la aplicación
-│   ├── Definitivo.csv          # Datos definitivos rutinas del proyecto
+│   ├── rutinas.csv          # Datos definitivos rutinas del proyecto
 │   ├── filtering.py            # Filtrado de datos
 │   ├── mealplanner.py          # Generación de planificaciones de comidas (API spoonacular)
 │   └── pages/

@@ -118,7 +118,7 @@ if __name__ == '__main__':
     # Workouts
     st.write(f'# Rutinas Adecuadas para {nivel}')
 
-    df_rutinas = pd.read_csv('Definitivo.csv')
+    df_rutinas = pd.read_csv('rutinas.csv')
 
     nombre_rutina, rutina = rutina_personalizada(df_rutinas, nivel, sexo, objetivo)
     
