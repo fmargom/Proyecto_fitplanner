@@ -101,7 +101,10 @@ def rutina_personalizada(workouts : pd.DataFrame, nivel : str, sexo : str, objet
 # ------------------------------           
 
 if __name__ == '__main__':
-    st.title("🏋️‍♂️Descubre Tu Rutina Personalizada, Dieta basada en Calorías Diarias y Ofertas Exclusivas en Musculación 🥑")
+    st.set_page_config(page_title="Tu Plan Personalizado",page_icon = 'image.jpg', layout="wide", initial_sidebar_state="collapsed")
+    st.markdown("<h1 style='color: green;'>🏋️‍♂️Descubre Tu Rutina Personalizada, Dieta basada en Calorías Diarias y Ofertas Exclusivas en Musculación 🥑</h1>", unsafe_allow_html=True)
+    logo = "image.jpg"
+    st.sidebar.image(logo, width=300  )
 
     try:
         nivel = st.session_state['nivel']
@@ -114,6 +117,11 @@ if __name__ == '__main__':
     except KeyError as e:
         st.error(f"Falta la clave en session_state: {e}")
         st.stop()
+    
+    #Cargar df dieta
+    calorias = calcular_calorias(objetivo, peso, altura, edad, sexo, factor_actividad)
+    m = MealPlanner()
+    df_dieta = m.get_weekly_menu(calorias)
 
     # Workouts
     st.write(f'# Rutinas Adecuadas para {nivel}')
@@ -123,7 +131,7 @@ if __name__ == '__main__':
     nombre_rutina, rutina = rutina_personalizada(df_rutinas, nivel, sexo, objetivo)
     
 
-    st.write(f"## - Tu rutina ideal es del tipo {rutina['Workout Type'].iloc[0]}: {nombre_rutina}")
+    st.write(f"<h2 style='color: #a6ffcc;'>Tu rutina ideal es del tipo {rutina['Workout Type'].iloc[0]}: {nombre_rutina}</h2>", unsafe_allow_html=True)
     st.write("### Detalles de la rutina:")
     for index, row in rutina.iterrows():
         st.write(f"📌 - **{row['title']}**: {row['content']}")
@@ -134,38 +142,31 @@ if __name__ == '__main__':
 
     recommended_supps = rutina['Recommended Supps'].iloc[0]
     if isinstance(recommended_supps, str) and recommended_supps:
-        st.write("<h2 style='color: #ff5733;'> ⭐ - Le recomendamos los siguientes productos:</h2>", unsafe_allow_html=True)
+        st.write("<h2 style='color: #a6ffcc;'> ⭐  Le recomendamos los siguientes productos:</h2>", unsafe_allow_html=True)
         supps_list = [supp.strip() for supp in recommended_supps.split(",")]
         for supp in supps_list:
             st.markdown(f"- ✅ **{supp}**")
     
     df_productos = pd.read_csv('productos_paginas.csv')
     if isinstance(recommended_supps, str) and recommended_supps:
-        st.write(f'# Suplementos recomendados con descuentos en Decathlon')
+        st.write(f"<h2 style='color: #a6ffcc;'> Suplementos recomendados con descuentos en Decathlon</h2>", unsafe_allow_html=True)
         df_filtrado = busqueda_ofertas(supps_list, df_productos)
         mostrar_productos(df_filtrado)
-        st.write(f'# Otros productos recomendados con descuentos')
+        st.write(f"<h2 style='color: #a6ffcc;'>Otros productos recomendados con descuentos</h2>", unsafe_allow_html=True)
         mostrar_productos(df_productos)
     else: 
-        st.write(f'# Productos recomendados con descuentos en Decathlon')
+        st.write(f"<h2 style='color: #a6ffcc;'>Productos recomendados con descuentos en Decathlon</h2>", unsafe_allow_html=True)
         df_filtrado = df_productos
         mostrar_productos(df_filtrado)
     
 
 
     # Mealplanner
-    '''
-    m = MealPlanner()
-    dieta = m.get_weekly_menu(calorias)
-    dieta = dieta[['Meal','Name', 'Calories']]
-    st.dataframe(dieta)
-    '''
-    calorias = calcular_calorias(objetivo, peso, altura, edad, sexo, factor_actividad)
-    st.write(f'# Meal Planner para unas {calorias} calorías diarias aprox')
+    
+    
+    st.write(f"<h2 style='color: #a6ffcc;'>Meal Planner para unas {calorias} calorías diarias aprox</h2>", unsafe_allow_html=True)
 
-    df_dieta = pd.read_csv('C:/Users/ImadRMobiArchitects/OneDrive - mobiarchitects.com/Bureau/Ciencia de Datos/1 - Cuatrimestres/3ER Cuatrimestre/ATD/Proyecto/Repositorio/ProyectoATD_fitplanner/project/daily_meals_plan_example.csv')
-    #m = MealPlanner()
-    #df_dieta = m.get_weekly_menu(calorias)
+    
     dias_semana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
     dias_ingles = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday','sunday'] 
     comidas = ['Desayuno', 'Comida', 'Cena']

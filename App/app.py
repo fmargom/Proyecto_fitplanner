@@ -1,8 +1,10 @@
 import streamlit as st
 
-st.set_page_config(page_title="Tu Plan Personalizado", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Tu Plan Personalizado",page_icon = 'image.jpg', layout="wide", initial_sidebar_state="collapsed")
+logo = "image.jpg"
+st.sidebar.image(logo, width=300  )
 
-st.title("Bienvenido a tu App de Rutinas y Dietas Personalizadas 💪🥗")
+st.markdown("<h1 style='color: darkgreen;'>💪Bienvenido a tu App de Rutinas y Dietas Personalizadas 🥗</h1>", unsafe_allow_html=True)
 
 st.subheader("Rellene el formulario para proceder con su plan personalizado:")
 with st.form(key='user_form'):
