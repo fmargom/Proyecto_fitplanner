@@ -13,6 +13,12 @@ Fitplanner es una solución para quienes desean optimizar su vida saludable medi
 
 ---
 
+## 🔄 Flujo Completo del Proyecto
+
+![1738497289262](image/README/1738497289262.png)
+
+---
+
 ## 📂 Estructura del Proyecto
 
 ```
