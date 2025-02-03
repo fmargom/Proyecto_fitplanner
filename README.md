@@ -64,7 +64,22 @@ Proyecto_Fitplanner/
    ```sh
    cd Proyecto_Fitplanner
    ```
-3. Instala las dependencias necesarias:
+3. Crea un entorno virtual:
+   
+   ```sh
+   python -m venv env
+   ```
+4. Activa el entorno virtual:
+   
+   - En Windows:
+   ```sh
+   env\Scripts\activate
+   ```
+   - En Linux y macOS:
+   ```sh
+   source env/bin/activate
+   ```
+5. Instala las dependencias necesarias:
 
    ```sh
    pip install -r requirements.txt
@@ -85,7 +100,7 @@ Proyecto_Fitplanner/
 
 ### Ejecución de Notebooks
 
-Probablemente casi ningún Notebook te pueda ejecutar correctamente, ya que por razones obvias hemos decidido no publicar nuestras tokens de algunas APIS y los headers en algunos casos.
+Probablemente casi ningún Notebook se pueda ejecutar correctamente, ya que por razones obvias hemos decidido no publicar nuestras tokens de algunas APIS y los headers en algunos casos.
 
 ---
 
