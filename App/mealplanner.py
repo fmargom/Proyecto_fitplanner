@@ -12,7 +12,7 @@ class MealPlanner:
     URL_PLANNER = "https://api.spoonacular.com/mealplanner/generate"
 
     def __init__(self, api_key: str = None):
-        self.api_key = api_key if api_key is not None else os.getenv("API_KEY3")
+        self.api_key = api_key if api_key is not None else os.getenv("API_KEY1")
         self.daily_meals_plan = {
             "Meal": [],
             "Name": [],
