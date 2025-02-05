@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from fuzzywuzzy import fuzz
 from typing import Tuple
-from mealplanner import MealPlanner
+from Recetas.mealplanner import MealPlanner
 
 def calcular_calorias(objetivo, peso, altura, edad, genero, factor_actividad):
     """

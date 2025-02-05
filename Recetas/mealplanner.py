@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 from dotenv import load_dotenv
 from loguru import logger
-from filtering import Filtering  # Importa la clase Filtering
+from Recetas.filtering import Filtering  # Importa la clase Filtering
 
 load_dotenv()
 
