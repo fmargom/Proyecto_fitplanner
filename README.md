@@ -4,7 +4,7 @@ Fitplanner es una solución para quienes desean optimizar su vida saludable medi
 
 ---
 
-## 🚀 Funcionalidades Principales
+## Funcionalidades Principales
 
 - **Rutinas de entrenamiento personalizadas:** Generación de rutinas basadas en diferentes objetivos y niveles de experiencia en el gimnasio.
 - **Planificación de comidas:** Recetas adaptadas a las necesidades calóricas.
@@ -13,14 +13,14 @@ Fitplanner es una solución para quienes desean optimizar su vida saludable medi
 
 ---
 
-## 🔄 Flujo Completo del Proyecto
+## Flujo Completo del Proyecto
 
 
 ![1738497937392](image/README/1738497937392.png)
 
 ---
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 Proyecto_Fitplanner/
@@ -52,7 +52,7 @@ Proyecto_Fitplanner/
 
 ---
 
-## 🛠️ Instalación
+## Instalación
 
 1. Clona el repositorio:
 
@@ -87,7 +87,7 @@ Proyecto_Fitplanner/
 
 ---
 
-## 🧑‍💻 Uso
+## Uso
 
 ### Ejecución de la Aplicación
 
@@ -104,7 +104,7 @@ Probablemente casi ningún Notebook se pueda ejecutar correctamente, ya que por 
 
 ---
 
-## 🔍 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **Lenguaje:** Python
 - **Framework Web:** Streamlit
@@ -112,7 +112,7 @@ Probablemente casi ningún Notebook se pueda ejecutar correctamente, ya que por 
 - **Visualización:** Pandas, Matplotlib
 - **Gestión de Datos:** Archivos CSV y JSON
 
-## 🤝 Contribuciones
+## Contribuciones
 
 Sigue los siguientes pasos si quieres contribuir al proyecto:
 
