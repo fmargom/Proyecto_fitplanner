@@ -4,6 +4,16 @@ Fitplanner es una solución para quienes desean optimizar su vida saludable medi
 
 ---
 
+## Autores
+
+- Fernando Martínez
+- Sergio Ortiz
+- Imad Rifai
+
+---
+
+---
+
 ## Funcionalidades Principales
 
 - **Rutinas de entrenamiento personalizadas:** Generación de rutinas basadas en diferentes objetivos y niveles de experiencia en el gimnasio.
