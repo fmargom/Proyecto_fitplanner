@@ -102,7 +102,7 @@ Proyecto_Fitplanner/
 1. Ejecuta la aplicación principal de Streamlit:
 
    ```sh
-   python App/app.py
+   streamlit run App/app.py
    ```
 2. Accede a la interfaz web que se abrirá en tu navegador.
 
