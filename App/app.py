@@ -1,17 +1,19 @@
 import streamlit as st
+from pathlib import Path
 
-st.set_page_config(page_title="Tu Plan Personalizado",page_icon = 'image.jpg', layout="wide", initial_sidebar_state="collapsed")
-logo = "image.jpg"
+logo = Path(__file__).parent / "image.jpg"
+
+st.set_page_config(page_title="Tu Plan Personalizado",page_icon = logo, layout="wide", initial_sidebar_state="collapsed")
 st.sidebar.image(logo, width=300  )
 
 st.markdown("<h1 style='color: darkgreen;'>💪Bienvenido a tu App de Rutinas y Dietas Personalizadas 🥗</h1>", unsafe_allow_html=True)
 
 st.subheader("Rellene el formulario para proceder con su plan personalizado:")
 with st.form(key='user_form'):
-    nombre = st.text_input("¿Cuál es tu nombre?", "Usuario") 
+    nombre = st.text_input("Nombre?", "Usuario") 
 
     objetivo = st.selectbox(
-        "¿Cuál es tu objetivo?",
+        "Objetivo",
         ('Lose Fat', 'Build Muscle', 'General Fitness', 'Increase Strength', 'Sports Performance')
     )
 
@@ -20,32 +22,32 @@ with st.form(key='user_form'):
         ('Beginner', 'Advanced', 'Intermediate')
     )
     sexo = st.selectbox(
-        "¿Cuál es tu género?",
+        "Género",
         ("Hombre", "Mujer")
     )
     peso = st.number_input(
-        "Introduce tu peso",  
-        min_value=0.0,          
-        max_value=150.0,        
-        value = 0.0,
+        "Peso (kg)",  
+        min_value=20.0,          
+        max_value=200.0,        
+        value = 20.0,
         step=0.1                
     )
     altura = st.number_input(
-        '¿Cuál es tu altura (en cm)',
-        min_value=0,          
+        'Altura (cm)',
+        min_value=100,          
         max_value=250,        
         step=1  
     )
     edad = st.number_input(
-        '¿Cuál es tu edad',         
-        min_value=0,          
+        'Edad',         
+        min_value=8,          
         max_value=100,        
         step=1  
     )
     
 
     factor_actividad = st.selectbox(
-        'Cuál es tu factor de actividad semanal:',
+        'Actividad semanal',
         ("Sedentario", "Poca Actividad (1-3 veces por semana)", "Actividad Moderada (3-5 veces por semana)", 'Intensa (6-7 veces por semana)')
     )
 
